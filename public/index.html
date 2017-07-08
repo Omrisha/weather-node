@@ -4,7 +4,19 @@
         <meta charset="utf-8">
         <title>ForcastLocator</title>
     </head>
-    <body>
-        <p>Hi</p>
+    <body style="text-align: center;">
+        <p><h2>Welcome to the simpliest forecast generator.</h2></p>
+        <p>Where are you going?</p>
+        
+        <form id="location-form">
+            <input name="address" type="text" placeholder="Like: Tel Aviv, Israel" />
+            <br>
+            <button>Send</button>
+        </form>
+
+        <div id="forecast"></div>
+        <script src="/js/libs/jquery-3.2.1.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/index.js"></script>
     </body>
 </html>

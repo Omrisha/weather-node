@@ -4,8 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "test": "mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec 'npm test'"
   },
   "engines": {
     "node": "6.2.2"
@@ -17,5 +18,10 @@
     "express": "^4.15.3",
     "hbs": "^4.0.1",
     "yargs": "^4.8.1"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mathjs": "^3.14.2",
+    "mocha": "^3.4.2"
   }
 }

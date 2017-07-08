@@ -12,11 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "mathjs": "^3.14.2"
   },
   "devDependencies": {
     "expect": "^1.20.2",
-    "mathjs": "^3.14.2",
     "mocha": "^3.4.2"
   }
 }

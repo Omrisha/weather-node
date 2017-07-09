@@ -11,8 +11,8 @@ socket.on('disconnect', function() {
 socket.on('fetchNewForecast', function(forecast) {
     console.log(forecast);
 
-    jQuery('#forecast').empty();
-    jQuery('#forecast').append(`
+    $('#forecast').empty();
+    $('#forecast').append(`
     <h3>${forecast.location}</h3>
     <br>
     The summary of today: ${forecast.summary}
@@ -32,4 +32,8 @@ $('form').submit(function(event) {
     console.log($('input').val());
     socket.emit('newLocation', $('input').val());
     return false;
+});
+
+$('#history').click(function() {
+    alert ("Getting history");
 });

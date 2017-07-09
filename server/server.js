@@ -42,7 +42,7 @@ io.on('connection', (socket) => {
                         // Connection url
                         var url = 'mongodb://localhost:27017/SimplyForecastDB';
                         // Connect using MongoClient
-                        MongoClient.connect(url, (err, db) => {
+                        MongoClient.connect(process.env.MONGODB_URI || url, (err, db) => {
                         if (err) {
                             console.log('Unable to connect to MongoDB server.');
                         }

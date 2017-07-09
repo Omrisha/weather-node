@@ -11,6 +11,7 @@ socket.on('disconnect', function() {
 socket.on('fetchNewForecast', function(forecast) {
     console.log(forecast);
 
+    jQuery('#forecast').empty();
     jQuery('#forecast').append(`
     <h3>${forecast.location}</h3>
     <br>

@@ -1,30 +1,136 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+        <style type="text/css">
+
+            /* Sticky footer styles
+            -------------------------------------------------- */
+
+            html,
+            body {
+                height: 100%;
+                /* The html and body elements cannot have any padding or margin. */
+            }
+
+            /* Wrapper for page content to push down footer */
+            #wrap {
+                min-height: 100%;
+                height: auto !important;
+                height: 100%;
+                /* Negative indent footer by it's height */
+                margin: 0 auto -60px;
+            }
+
+            /* Set the fixed height of the footer here */
+            #push,
+            #footer {
+                height: 60px;
+            }
+            #footer {
+                background-color: #f5f5f5;
+            }
+
+            /* Lastly, apply responsive CSS fixes as necessary */
+            @media (max-width: 767px) {
+                #footer {
+                margin-left: -20px;
+                margin-right: -20px;
+                padding-left: 20px;
+                padding-right: 20px;
+                }
+            }
+
+
+
+            /* Custom page CSS
+            -------------------------------------------------- */
+            /* Not required for template or sticky footer method. */
+
+            #wrap > .container {
+                padding-top: 60px;
+            }
+            .container .credit {
+                margin: 20px 0;
+            }
+
+            code {
+                font-size: 80%;
+            }
+        </style>
         <title>Simply Forecast</title>
     </head>
-    <body style="text-align: center;">
-        <p><h2>Welcome to the simpliest forecast generator.</h2></p>
-        <p>Where are you going?</p>
-        
-        <form id="location-form">
-            <input name="address" type="text" placeholder="Like: Tel Aviv, Israel" />
+    <body>
+        <div id="wrap">
+            <!-- Fixed navbar -->
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Simply Forecast</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+
+        <div class="container">
+            <div class="page-header">
+            <h1>Welcome to the simpliest forecast generator.</h1>
+            </div>
+            <p class="lead">Where are you going?</p>
+            <form id="location-form">
+                <input class="form-control" name="address" type="text" placeholder="Like: Tel Aviv, Israel" />
+                <br>
+                <button class="btn Ben-primary">Send</button>
+                <button class="btn Ben-primary">See History</button>
+            </form>
+            <div id="forecast"></div>
+            <script src="/js/libs/jquery-3.2.1.min.js"></script>
+            <script src="js/bootstrap.js"></script>
+            <script src="/socket.io/socket.io.js"></script>
+            <script src="/js/index.js"></script>
             <br>
-            <button>Send</button>
-        </form>
+            </div>
+            </div>
 
-        <div id="forecast"></div>
-        <script src="/js/libs/jquery-3.2.1.min.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="/js/index.js"></script>
-
-        &copy; Copyright 
-        <script language="JavaScript" type="text/javascript">
-            var now = new Date();
-            var theYear = now.getFullYear();
-            document.write(theYear);
-        </script> Omri Shapira<br>
-        Powered by Dark Sky
+        <div id="push"></div>
+        </div>
+        
+        <div id="footer">
+            <div class="container">
+                <p class="muted credit">
+                &copy; Copyright 
+                <script language="JavaScript" type="text/javascript">
+                    var now = new Date();
+                    var theYear = now.getFullYear();
+                    document.write(theYear);
+                </script> Omri Shapira<br>
+                Powered by Dark Sky
+                </p>
+            </div>
+        </div>
+        
     </body>
 </html>

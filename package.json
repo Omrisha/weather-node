@@ -12,8 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "express": "^4.15.3",
     "mathjs": "^3.14.2",
+    "mongodb": "^2.2.30",
     "path": "^0.12.7",
     "request": "^2.81.0",
     "socket.io": "^2.0.3"
